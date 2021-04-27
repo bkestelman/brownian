@@ -1,7 +1,8 @@
 # brownian
 Tools and simulations for Brownian motions
 
-Functions
+### Functions
+
 Generate stuff (brownian motions, etc.)
 - brownian motion (1D, 2D,...?)
 - skorohod
@@ -9,5 +10,6 @@ Generate stuff (brownian motions, etc.)
 - time change
 - other martingales?
 
-Plotting
+### Plotting
+
 Maybe use seaborn?
