@@ -21,9 +21,11 @@ class BrownianMotion(MarkovProcess):
         if self.history:
             self.history.append(self.state)
 
-def brownian_bridge(res=100):
+def brownian_bridge(min_steps=1000):
     b = BrownianMotion(history=True)
     b.step()
+    for i in range(min_steps): # a related (and seemingly more difficult) problem is a bridge that stops the first time it resets to its initial state
+        b.step()
     first = b.state
     reset = False
     while not reset:
@@ -36,7 +38,7 @@ def brownian_bridge(res=100):
 
 def demo():
     r = BrownianMotion(history=True)
-    for i in range(100):
+    for i in range(1000):
         r.step()
     r.plot_history()
     bridge = brownian_bridge()
